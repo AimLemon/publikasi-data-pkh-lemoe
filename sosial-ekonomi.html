@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karakteristik Sosial Ekonomi - Publikasi Data PKH Kelurahan Lemoe</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+
+    <style>
+        /* CSS Khusus Tabel Publikasi Mengikuti Warna Hijau Solid Navigasi Hover */
+        .bps-table-container {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .bps-table-header-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #15803d; /* Warna hijau solid hover navigasi */
+        }
+        .bps-table-badge {
+            background-color: #15803d; /* Warna hijau solid hover navigasi */
+            color: #ffffff;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+        }
+        .bps-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #cbd5e1;
+        }
+        .bps-table thead th {
+            background-color: #15803d !important; /* Hijau solid non-transparan */
+            color: #ffffff !important;
+            font-weight: 700;
+            font-size: 0.875rem;
+            padding: 12px 16px;
+            border: none;
+        }
+        .bps-table tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+        .bps-table tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .bps-table tbody td {
+            padding: 11px 16px;
+            font-size: 0.875rem;
+            color: #334155;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .bps-table tfoot tr {
+            background-color: #f0fdf4;
+            font-weight: 700;
+        }
+        .bps-table tfoot td {
+            padding: 12px 16px;
+            font-size: 0.875rem;
+            color: #0f172a;
+            border-top: 2px solid #15803d;
+        }
+        .bps-table-footer-note {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="hero-header py-4">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-8">
+                    <div class="d-flex align-items-center gap-3 flex-wrap flex-sm-nowrap text-center text-sm-start">
+                        <div class="logo-container d-flex align-items-center gap-2 bg-white p-2 rounded-3 shadow-sm">
+                            <img src="assets/logo/logo1.png" alt="Logo 1" class="header-logo" onerror="this.src='https://via.placeholder.com/50x50?text=Logo+1'">
+                            <img src="assets/logo/logo2.png" alt="Logo 2" class="header-logo" onerror="this.src='https://via.placeholder.com/50x50?text=Logo+2'">
+                            <img src="assets/logo/logo3.png" alt="Logo 3" class="header-logo" onerror="this.src='https://via.placeholder.com/50x50?text=Logo+3'">
+                        </div>
+                        <div>
+                            <span class="badge bg-green-subtle text-green fw-semibold mb-1 tracking-wider text-uppercase font-monospace">
+                                Program Desa/Kelurahan Cinta Statistik (Descantik)
+                            </span>
+                            <h1 class="h3 mb-1 fw-bold text-white">Eksplorasi Data Penerima PKH Kelurahan Lemoe</h1>
+                            <p class="mb-0 text-white-50 small">
+                                <i class="bi bi-geo-alt-fill me-1"></i>Kecamatan Bacukiki, Kota Parepare · Portal Publikasi Data Terpadu
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-lg-end text-center">
+                    <div class="header-badge-status d-inline-flex align-items-center gap-2 px-3 py-2 rounded-pill bg-white bg-opacity-10 text-white border border-white border-opacity-25 small backdrop-blur">
+                        <span class="status-dot"></span>
+                        <span>Sensus Data Mikro Terpadu PKH</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+        <div class="container">
+            <button class="navbar-toggler w-100 my-2 border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="d-flex justify-content-between align-items-center fw-bold text-success">
+                    <span><i class="bi bi-grid-fill me-2"></i>Menu Navigasi</span>
+                    <i class="bi bi-chevron-expand fs-5"></i>
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto gap-1 py-2 py-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door-fill"></i> Beranda
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="metodologi.html">
+                            <i class="bi bi-journal-text"></i> Sekilas Pendataan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="karakteristik-wilayah.html">
+                            <i class="bi bi-geo-alt-fill"></i> Karakteristik Wilayah
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="karakteristik-perumahan.html">
+                            <i class="bi bi-building-fill"></i> Karakteristik Perumahan
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sanitasi-dan-air.html">
+                            <i class="bi bi-droplet-fill"></i> Sanitasi & Air
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="sosial-ekonomi.html">
+                            <i class="bi bi-person-workspace"></i> Karakteristik Sosial Ekonomi
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container py-4 py-lg-5">
+
+        <!-- Page Header Card -->
+        <div class="welcome-banner p-4 p-md-5 mb-4 rounded-4 position-relative overflow-hidden">
+            <div class="row align-items-center position-relative z-1">
+                <div class="col-lg-9">
+                    <span class="section-badge mb-2">
+                        <i class="bi bi-person-workspace me-1"></i> BAB V
+                    </span>
+                    <h2 class="display-6 fw-bold text-dark-green mb-2">Karakteristik Sosial Ekonomi</h2>
+                    <p class="lead text-secondary mb-0 fs-6">
+                        Gambaran kondisi profil pekerjaan, mata pencaharian utama, dan kondisi sosial ekonomi rumah tangga penerima Program Keluarga Harapan (PKH) di Kelurahan Lemoe.
+                    </p>
+                </div>
+            </div>
+            <div class="banner-bg-shape"></div>
+        </div>
+
+        <!-- Section 5.1 Kepala Keluarga -->
+        <div class="bg-white p-4 p-md-5 rounded-4 border shadow-sm mb-5">
+            <div class="mb-4">
+                <span class="badge bg-green-subtle text-green fw-bold mb-2">Pasal 5.1</span>
+                <h4 class="fw-bold text-dark-green mb-2">Kepala Keluarga</h4>
+                <p class="text-secondary small mb-0 lh-lg">
+                    Mata pencaharian Kepala Keluarga (KK) merupakan indikator utama dalam melihat kondisi ekonomi rumah tangga. Data mengenai jenis pekerjaan utama KK disajikan pada tabel berikut.
+                </p>
+            </div>
+
+            <!-- Diubah ke align-items-start agar container kanan tidak ditarik melar secara paksa -->
+            <div class="row g-4 align-items-start">
+                <!-- Tabel Data 5.1 -->
+                <div class="col-lg-5">
+                    <div class="bps-table-container">
+                        <div>
+                            <!-- Header Judul Tabel -->
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <span class="bps-table-badge">Tabel 5.1</span>
+                                <span class="bps-table-header-title">Pekerjaan Kepala Keluarga</span>
+                            </div>
+
+                            <!-- Struktur Tabel Publikasi -->
+                            <div class="table-responsive">
+                                <table class="bps-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Kategori</th>
+                                            <th class="text-center">Jumlah (KK)</th>
+                                            <th class="text-center">Persentase (%)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Petani/Pekebun</td>
+                                            <td class="text-center">46</td>
+                                            <td class="text-center">31.7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mengurus Rumah Tangga</td>
+                                            <td class="text-center">39</td>
+                                            <td class="text-center">26.9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Buruh Harian Lepas</td>
+                                            <td class="text-center">38</td>
+                                            <td class="text-center">26.2</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TIDAK ADA</td>
+                                            <td class="text-center">8</td>
+                                            <td class="text-center">5.5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SWASTA</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">1.4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tukang Kayu</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">1.4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Buruh Tani</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">1.4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SOPIR</td>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center">1.4</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MEKANIK</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">0.7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tukang Batu</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">0.7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Kuli Bangunan</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">0.7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Meninggal, tinggal anaknya RAHMAT YANI</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">0.7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Buruh Bangunan</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">0.7</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MENJUAL SAYUR DI PASAR</td>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">0.7</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td class="text-start">Jumlah</td>
+                                            <td class="text-center">145</td>
+                                            <td class="text-center">100.0</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Keterangan Sumber Data -->
+                        <div class="bps-table-footer-note">
+                            Sumber: Pendataan Lapangan Penerima PKH Kelurahan Lemoe, 2026
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualisasi Interactive Chart 5.1 (Horizontal Bar Chart) -->
+                <div class="col-lg-7">
+                    <div class="border rounded-4 p-3 p-md-4 bg-white shadow-sm">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="fw-bold text-dark-green mb-0">
+                                <i class="bi bi-bar-chart-line-fill text-success me-2"></i>Gambar 5.1 Diagram Pekerjaan Kepala Keluarga
+                            </h6>
+                            <span class="badge bg-light text-muted border">Interaktif</span>
+                        </div>
+                        
+                        <!-- Menggunakan proporsi tinggi proporsional (420px) agar rasio bar rapi dan pas -->
+                        <div style="position: relative; height: 420px; width: 100%;">
+                            <canvas id="chartPekerjaanKK"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5.2 Aset Bergerak -->
+    <div class="bg-white p-4 p-md-5 rounded-4 border shadow-sm mb-5">
+        <div class="mb-4">
+            <span class="badge bg-green-subtle text-green fw-bold mb-2">Pasal 5.2</span>
+            <h4 class="fw-bold text-dark-green mb-2">Aset Bergerak</h4>
+            <p class="text-secondary small mb-0">Tabel ini menjabarkan kepemilikan aset bergerak. Satu rumah tangga dimungkinkan memiliki lebih dari satu jenis aset.</p>
+        </div>
+        <div class="bps-table-container">
+            <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="bps-table-badge">Tabel 5.2</span>
+                <span class="bps-table-header-title">Kepemilikan Aset Bergerak</span>
+            </div>
+            <div class="table-responsive">
+                <table class="bps-table w-100">
+                    <thead><tr><th>Kategori</th><th class="text-center">Jumlah (KK)</th><th class="text-center">Persentase (%)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Motor</td><td class="text-center">57</td><td class="text-center">39.3</td></tr>
+                        <tr><td>Motor, Emas (min 10 gr)</td><td class="text-center">39</td><td class="text-center">26.9</td></tr>
+                        <tr><td>Tidak memiliki aset di atas</td><td class="text-center">38</td><td class="text-center">26.2</td></tr>
+                        <tr><td>Mobil, Motor, Emas (min 10 gr)</td><td class="text-center">6</td><td class="text-center">4.1</td></tr>
+                        <tr><td>Emas (min 10 gr)</td><td class="text-center">4</td><td class="text-center">2.8</td></tr>
+                        <tr><td>Mobil, Motor</td><td class="text-center">1</td><td class="text-center">0.7</td></tr>
+                    </tbody>
+                    <tfoot><tr><td>Jumlah</td><td class="text-center">145</td><td class="text-center">100.0</td></tr></tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 5.3 Aset Tidak Bergerak -->
+    <div class="bg-white p-4 p-md-5 rounded-4 border shadow-sm mb-5">
+        <div class="mb-4">
+            <span class="badge bg-green-subtle text-green fw-bold mb-2">Pasal 5.3</span>
+            <h4 class="fw-bold text-dark-green mb-2">Aset Tidak Bergerak</h4>
+            <p class="text-secondary small mb-0">Rincian kepemilikan aset tidak bergerak pada rumah tangga penerima PKH.</p>
+        </div>
+        <div class="bps-table-container">
+            <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="bps-table-badge">Tabel 5.3</span>
+                <span class="bps-table-header-title">Kepemilikan Aset Tidak Bergerak</span>
+            </div>
+            <div class="table-responsive">
+                <table class="bps-table w-100">
+                    <thead><tr><th>Kategori</th><th class="text-center">Jumlah (KK)</th><th class="text-center">Persentase (%)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Rumah</td><td class="text-center">78</td><td class="text-center">53.8</td></tr>
+                        <tr><td>Rumah, Tanah</td><td class="text-center">36</td><td class="text-center">24.8</td></tr>
+                        <tr><td>Tidak Memiliki</td><td class="text-center">24</td><td class="text-center">16.6</td></tr>
+                        <tr><td>Tanah</td><td class="text-center">6</td><td class="text-center">4.1</td></tr>
+                        <tr><td>Rumah, Tidak Memiliki</td><td class="text-center">1</td><td class="text-center">0.7</td></tr>
+                    </tbody>
+                    <tfoot><tr><td>Jumlah</td><td class="text-center">145</td><td class="text-center">100.0</td></tr></tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-custom py-4 mt-auto">
+        <div class="container text-center text-md-start">
+            <div class="row align-items-center g-3">
+                <div class="col-md-8">
+                    <h6 class="fw-bold text-white mb-1">Tim Kuliah Kerja Nyata - Kelurahan Lemoe</h6>
+                    <p class="small text-white-50 mb-0">
+                        Kecamatan Bacukiki, Kota Parepare · Publikasi Data Eksplorasi Penerima PKH &copy; 2026.
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <a href="#" class="btn btn-sm btn-outline-light rounded-pill px-3">
+                        <i class="bi bi-arrow-up-short"></i> Kembali ke Atas
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JS File Global -->
+    <script src="js/script.js"></script>
+    <!-- File JS Terpisah Khusus Diagram Halaman Sosial Ekonomi -->
+    <script src="js/sosial-ekonomi.js"></script>
+</body>
+</html>
