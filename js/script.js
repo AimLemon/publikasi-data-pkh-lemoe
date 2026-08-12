@@ -29,133 +29,94 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // ----------------------------------------------------
-    // 2. DIAGRAM PERSEBARAN RT (BAB II - KARAKTERISTIK WILAYAH)
+    // 2.2 DIAGRAM PERSEBARAN RT (BAB II - KARAKTERISTIK WILAYAH)
     // ----------------------------------------------------
     const canvasRT = document.getElementById('chartPersebaranRT');
     if (canvasRT && typeof Chart !== 'undefined') {
         const ctx = canvasRT.getContext('2d');
 
-        const colorBlueSolid = 'rgba(59, 130, 246, 1)';
-        const colorRedSolid = 'rgba(239, 68, 68, 1)';
-        const colorBlueFaded = 'rgba(59, 130, 246, 0.2)';
-        const colorRedFaded = 'rgba(239, 68, 68, 0.2)';
+        const baseColorsRT = [
+            '#4285F4', // RT 01 RW 01
+            '#EA4335', // RT 02 RW 01
+            '#FBBC05', // RT 01 RW 02
+            '#34A853', // RT 02 RW 02
+            '#FF6D00', // RT 01 RW 03
+            '#46BDC6', // RT 02 RW 03
+            '#7BAAF7', // RT 01 RW 04
+            '#F07B72'  // RT 02 RW 04
+        ];
+
+        const fadedColorsRT = [
+            'rgba(66, 133, 244, 0.25)',
+            'rgba(234, 67, 53, 0.25)',
+            'rgba(251, 188, 5, 0.25)',
+            'rgba(52, 168, 83, 0.25)',
+            'rgba(255, 109, 0, 0.25)',
+            'rgba(70, 189, 198, 0.25)',
+            'rgba(123, 170, 247, 0.25)',
+            'rgba(240, 123, 114, 0.25)'
+        ];
 
         new Chart(ctx, {
-            type: 'bar',
+            type: 'pie',
             data: {
-                labels: ['RT 01', 'RT 02', 'Jumlah'],
-                datasets: [
-                    {
-                        label: 'Jumlah (KK)',
-                        data: [73, 72, 145],
-                        backgroundColor: [colorBlueSolid, colorBlueSolid, colorBlueSolid],
-                        borderColor: '#2563eb',
-                        borderWidth: 1,
-                        borderRadius: 6
-                    },
-                    {
-                        label: 'Persentase (%)',
-                        data: [50.3, 49.7, 100],
-                        backgroundColor: [colorRedSolid, colorRedSolid, colorRedSolid],
-                        borderColor: '#dc2626',
-                        borderWidth: 1,
-                        borderRadius: 6
-                    }
-                ]
+                labels: [
+                    'RT 01 RW 01',
+                    'RT 02 RW 01',
+                    'RT 01 RW 02',
+                    'RT 02 RW 02',
+                    'RT 01 RW 03',
+                    'RT 02 RW 03',
+                    'RT 01 RW 04',
+                    'RT 02 RW 04'
+                ],
+                datasets: [{
+                    data: [15, 14, 20, 23, 14, 11, 24, 24],
+                    backgroundColor: [...baseColorsRT],
+                    borderColor: '#ffffff',
+                    borderWidth: 2,
+                    hoverOffset: 8
+                }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                animation: {
-                    duration: 1200,
-                    easing: 'easeOutQuart'
-                },
+                animation: { animateRotate: true, animateScale: true, duration: 1000 },
                 onHover: (event, chartElement, chart) => {
+                    const dataset = chart.data.datasets[0];
                     if (chartElement.length > 0) {
-                        const activeDatasetIndex = chartElement[0].datasetIndex;
                         const activeIndex = chartElement[0].index;
-
-                        chart.data.datasets.forEach((dataset, dIdx) => {
-                            const isBlueDataset = dIdx === 0;
-                            const solidColor = isBlueDataset ? colorBlueSolid : colorRedSolid;
-                            const fadedColor = isBlueDataset ? colorBlueFaded : colorRedFaded;
-
-                            dataset.backgroundColor = dataset.data.map((_, iIdx) => {
-                                if (dIdx === activeDatasetIndex && iIdx === activeIndex) {
-                                    return solidColor;
-                                }
-                                return fadedColor;
-                            });
+                        dataset.backgroundColor = dataset.data.map((_, index) => {
+                            return index === activeIndex ? baseColorsRT[index] : fadedColorsRT[index];
                         });
                     } else {
-                        chart.data.datasets[0].backgroundColor = [colorBlueSolid, colorBlueSolid, colorBlueSolid];
-                        chart.data.datasets[1].backgroundColor = [colorRedSolid, colorRedSolid, colorRedSolid];
+                        dataset.backgroundColor = [...baseColorsRT];
                     }
                     chart.update('none');
                 },
                 plugins: {
                     legend: {
-                        position: 'top',
-                        labels: {
-                            font: {
-                                family: 'Plus Jakarta Sans',
-                                size: 13,
-                                weight: '600'
-                            },
-                            usePointStyle: true,
-                            boxWidth: 10
+                        position: 'right',
+                        labels: { 
+                            font: { family: 'Plus Jakarta Sans', size: 12, weight: '500' }, 
+                            usePointStyle: true, 
+                            boxWidth: 10, 
+                            padding: 12 
                         }
                     },
                     tooltip: {
                         backgroundColor: '#1f2937',
-                        padding: 12,
-                        titleFont: {
-                            family: 'Plus Jakarta Sans',
-                            size: 14,
-                            weight: 'bold'
-                        },
-                        bodyFont: {
-                            family: 'Plus Jakarta Sans',
-                            size: 13
-                        },
-                        displayColors: true,
-                        cornerRadius: 8
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        max: 160,
-                        ticks: {
-                            stepSize: 50,
-                            font: {
-                                family: 'Plus Jakarta Sans',
-                                size: 12
+                        padding: 10,
+                        titleFont: { family: 'Plus Jakarta Sans', size: 13, weight: 'bold' },
+                        bodyFont: { family: 'Plus Jakarta Sans', size: 12 },
+                        callbacks: {
+                            label: function (context) {
+                                const label = context.label || '';
+                                const value = context.raw || 0;
+                                const total = context.dataset.data.reduce((acc, val) => acc + val, 0);
+                                const percentage = ((value / total) * 100).toFixed(1);
+                                return `${label}: ${value} KK (${percentage}%)`;
                             }
-                        },
-                        grid: {
-                            color: '#f3f4f6'
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Kategori',
-                            font: {
-                                family: 'Plus Jakarta Sans',
-                                weight: '600',
-                                size: 13
-                            }
-                        },
-                        ticks: {
-                            font: {
-                                family: 'Plus Jakarta Sans',
-                                size: 12,
-                                weight: '600'
-                            }
-                        },
-                        grid: {
-                            display: false
                         }
                     }
                 }
